@@ -60,12 +60,14 @@ scalacOptions ++= Seq(
   "-Ywarn-unused:imports",   // Warn if an import selector is not referenced.
   "-Ywarn-inaccessible",     // Warn about inaccessible types in method signatures.
   "-Ywarn-nullary-override", // Warn when non-nullary overrides nullary, e.g. def foo() over def foo.
-  "-Ywarn-numeric-widen"     // Warn when numerics are widened.
+  "-Ywarn-numeric-widen",    // Warn when numerics are widened.
+  "-encoding", "UTF-8"
 )
 
 javaOptions ++= Seq(
   "-Dconfig.file=conf/application.conf",
-  "-Dlogger.file=conf/logback.xml"
+  "-Dlogger.file=conf/logback.xml",
+  "-encoding", "UTF-8"
 )
 fork in run := true
 

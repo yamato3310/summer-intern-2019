@@ -2,20 +2,16 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# --[ 登録処理 ]----------------------------------------------------------------
 GET   /app/new-user                     controllers.app.NewUserController.viewForApp
 POST  /app/new-user                     controllers.app.NewUserCommitController.application
 
 
 
-# --[ 施設ページ ]----------------------------------------------------------------
 GET  /facility/list                    controllers.facility.FacilityController.list
 GET  /facility/search                  controllers.facility.FacilityController.search
 
-# --[ 特集ページ ]--------------------------------------------------------------
 GET  /recruit/intership-for-summer-21  controllers.recruit.InternshipForSummer21Controller.view
 
-# --[ その他 ]------------------------------------------------------------------
 GET  /assets/*file  controllers.Assets.versioned(path = "/public", file)
 GET  /              controllers.ApplicationController.redirect(to = "/recruit/intership-for-summer-21", from = "")
 GET  /*path         controllers.ApplicationController.redirect(to = "/recruit/intership-for-summer-21", path: String)
