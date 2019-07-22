@@ -83,4 +83,14 @@ class FacilityController @javax.inject.Inject()(
       }
     )
   }
+
+  /**
+   * 施設検索
+   */
+  def edit(id: Int) = TODO
+
+  /**
+   * 施設検索
+   */
+  def create = TODO
 }
