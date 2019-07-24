@@ -83,11 +83,18 @@ class FacilityController @javax.inject.Inject()(
       }
     )
   }
-
+// def edit(id: Long) = TODO
   /**
    * 施設検索
    */
-  def edit(id: Int) = TODO
+  def edit(id: Long) = Action.async { implicit request =>
+    for {
+      facility <- facilityDao.get(id)
+    } yield {
+      val header = ViewValuePageLayout(id = request.uri)
+      Ok(views.html.site.facility.edit.Main(header, facility))
+    }
+  }
 
   /**
    * 施設検索
