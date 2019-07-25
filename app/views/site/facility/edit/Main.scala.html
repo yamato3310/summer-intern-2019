@@ -2,6 +2,5 @@ import model.component.util.ViewValuePageLayout
 import persistence.facility.model.Facility
 
 @(vv: ViewValuePageLayout, facility: Option[Facility])
-@views.html.common.layout.NavGlobal(vv){
-    @views.html.site.facility.edit()
-}
+@views.html.common.layout.NavGlobal(vv)
+@views.html.site.facility.edit.Edit()
