@@ -138,17 +138,19 @@ class FacilityController @javax.inject.Inject()(
   /**
    * 施設追加画面
    */
-  def add() = Action { import request =>
+  def add() = Action { implicit request =>
     val header = SiteViewValueFacilityAdd(
       layout = ViewValuePageLayout(id = request.uri),
     )
-    Ok(views.html.site.facility.create.Main(header, formForFacilityEdit))
+    Ok(views.html.site.facility.add.Main(header, formForFacilityEdit))
   }
 
   /**
    * 施設追加
    */
-  def create = Action.async { implicit request =>
-    formForFacilityEdit.bindFromRequest.fold
-  }
+  // def create = Action.async { implicit request =>
+  //   formForFacilityEdit.bindFromRequest.fold
+  // }
+
+  def create = TODO
 }
