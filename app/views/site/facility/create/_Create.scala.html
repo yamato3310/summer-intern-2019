@@ -1,0 +1,13 @@
+@import persistence.facility.model._
+
+
+@(form: Form[FacilityEdit])(implicit messages: play.api.i18n.Messages)
+
+@helper.form( action = controllers.facility.routes.FacilityController.create) {
+    <div>
+        @helper.inputText(form("name"))
+        @helper.inputText(form("address"))
+        @helper.inputText(form("description"))
+        <button>追加</button>
+    <div>
+}
