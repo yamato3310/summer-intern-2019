@@ -16,7 +16,7 @@ import persistence.geo.model.Location
 import persistence.geo.dao.LocationDAO
 import model.site.facility.SiteViewValueFacilityList
 import model.site.facility.SiteViewValueFacilityEdit
-import model.site.facility.SiteViewValueFacilityCreate
+import model.site.facility.SiteViewValueFacilityAdd
 import model.component.util.ViewValuePageLayout
 
 
@@ -138,17 +138,12 @@ class FacilityController @javax.inject.Inject()(
   /**
    * 施設追加画面
    */
-   def add() = Action.async { import request =>
-      for {
-        facility <- facilityDao.get(id)
-      } yield {
-        val header = SiteViewValueFacilityEdit(
-          layout = ViewValuePageLayout(id = request.uri),
-          facility = facility
-        )
-      Ok(views.html.site.facility.create.Main(header, formForFacilityEdit))
-    }
-   }
+  def add() = Action { import request =>
+    val header = SiteViewValueFacilityAdd(
+      layout = ViewValuePageLayout(id = request.uri),
+    )
+    Ok(views.html.site.facility.create.Main(header, formForFacilityEdit))
+  }
 
   /**
    * 施設追加
