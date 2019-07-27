@@ -124,7 +124,7 @@ class FacilityController @javax.inject.Inject()(
         for {
           facility <- facilityDao.get(id)
         } yield {
-         val header = SiteViewValueFacilityEdit(
+          val header = SiteViewValueFacilityEdit(
           layout = ViewValuePageLayout(id = request.uri),
           facility = facility
         )
