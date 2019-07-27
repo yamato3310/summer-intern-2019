@@ -1,0 +1,16 @@
+@import persistence.facility.model._
+
+
+@(facility: Option[Facility], form: Form[FacilityEdit])(implicit messages: play.api.i18n.Messages)
+@if(facility.isEmpty == false) {
+    @helper.form( action = controllers.facility.routes.FacilityController.edit(facility.get.id.get)) {
+        <div>
+            @helper.inputText(form("name"), 'placeholder -> facility.get.name)
+            @helper.inputText(form("address"), 'placeholder -> facility.get.address)
+            @helper.inputText(form("description"), 'placeholder -> facility.get.description)
+            <button>編集</button>
+        <div>
+    }
+} else {
+    <div>存在しないidです</div>
+}

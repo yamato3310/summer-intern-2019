@@ -11,9 +11,11 @@ import play.api.i18n.I18nSupport
 import play.api.mvc.{AbstractController, MessagesControllerComponents}
 import persistence.facility.dao.FacilityDAO
 import persistence.facility.model.Facility.formForFacilitySearch
+import persistence.facility.model.Facility.formForFacilityEdit
 import persistence.geo.model.Location
 import persistence.geo.dao.LocationDAO
 import model.site.facility.SiteViewValueFacilityList
+import model.site.facility.SiteViewValueFacilityEdit
 import model.component.util.ViewValuePageLayout
 
 
@@ -84,17 +86,52 @@ class FacilityController @javax.inject.Inject()(
     )
   }
 
-  // def edit(id: Long) = TODO
+   /**
+   * 施設編集
+   */
+  def show(id: Long) = Action.async { implicit request =>
+    for {
+        facility <- facilityDao.get(id)
+      } yield {
+        val header = SiteViewValueFacilityEdit(
+          layout = ViewValuePageLayout(id = request.uri),
+          facility = facility
+        )
+      Ok(views.html.site.facility.edit.Main(header, formForFacilityEdit))
+    }
+  }
+
   /**
-   * 施設検索
+   * 施設編集
    */
   def edit(id: Long) = Action.async { implicit request =>
-    for {
-      facility <- facilityDao.get(id)
-    } yield {
-      val header = ViewValuePageLayout(id = request.uri)
-      Ok(views.html.site.facility.edit.Main(header, facility))
-    }
+    formForFacilityEdit.bindFromRequest.fold(
+       errors => {
+          for {
+          locSeq      <- daoLocation.filterByIds(Location.Region.IS_PREF_ALL)
+          facilitySeq <- facilityDao.findAll
+        } yield {
+          val vv = SiteViewValueFacilityList(
+            layout     = ViewValuePageLayout(id = request.uri),
+            location   = locSeq,
+            facilities = facilitySeq
+          )
+          Ok(views.html.site.facility.list.Main(vv, formForFacilitySearch))
+        }
+      },
+      form => {
+        facilityDao.update(id, form.name, form.address, form.description)
+        for {
+          facility <- facilityDao.get(id)
+        } yield {
+         val header = SiteViewValueFacilityEdit(
+          layout = ViewValuePageLayout(id = request.uri),
+          facility = facility
+        )
+        Ok(views.html.site.facility.edit.Main(header, formForFacilityEdit))
+        }
+      }
+    )
   }
 
   /**
