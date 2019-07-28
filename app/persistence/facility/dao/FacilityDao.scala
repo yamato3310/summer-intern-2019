@@ -44,6 +44,11 @@ class FacilityDAO @javax.inject.Inject()(
         .update((name, address, description))
     }
 
+  def create(name: String, address: String, description: String): Unit = 
+    db.run {
+      slick += Facility(name, address, description)
+    }
+
   /**
    * 施設を全件取得する
    */
