@@ -154,15 +154,35 @@ class FacilityController @javax.inject.Inject()(
   /**
    * 施設追加
    */
-   def create = TODO
-  // def create = Action.async { implicit request =>
-  //   formForFacilityEdit.bindFromRequest.fold(
-  //     errors => {
-
-  //     },
-  //     form => {
-        
-  //     }
-  //   )
-  // }
+  def create = Action.async { implicit request =>
+    formForFacilityAdd.bindFromRequest.fold(
+      errors => {
+        for {
+          locSeq      <- daoLocation.filterByIds(Location.Region.IS_PREF_ALL)
+          facilitySeq <- facilityDao.findAll
+        } yield {
+          val vv = SiteViewValueFacilityList(
+            layout     = ViewValuePageLayout(id = request.uri),
+            location   = locSeq,
+            facilities = facilitySeq
+          )
+          BadRequest(views.html.site.facility.list.Main(vv, formForFacilitySearch))
+        }
+      },
+      form => {
+        facilityDao.create(form.locationId, form.name, form.address, form.description)
+        for {
+          locSeq      <- daoLocation.filterByIds(Location.Region.IS_PREF_ALL)
+          facilitySeq <- facilityDao.findAll
+        } yield {
+          val vv = SiteViewValueFacilityList(
+            layout     = ViewValuePageLayout(id = request.uri),
+            location   = locSeq,
+            facilities = facilitySeq
+          )
+          Ok(views.html.site.facility.list.Main(vv, formForFacilitySearch))
+        }
+      }
+    )
+  }
 }

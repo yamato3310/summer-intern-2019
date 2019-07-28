@@ -38,7 +38,7 @@ case class FacilityEdit(
 
 // 施設追加
 case class FacilityAdd(
-  locationIdOpt: Option[Location.Id],
+  locationId: Location.Id,
   name: String,
   address: String,
   description: String,
@@ -69,7 +69,7 @@ object Facility {
 
   val formForFacilityAdd = Form (
     mapping(
-      "locationId" -> optional(text),
+      "locationId" -> text,
       "name" -> text,
       "address" -> text,
       "description" -> text
