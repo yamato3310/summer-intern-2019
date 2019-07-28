@@ -8,10 +8,10 @@
             @helper.inputText(form("name"), 'placeholder -> facility.get.name)
             @helper.inputText(form("address"), 'placeholder -> facility.get.address)
             @helper.inputText(form("description"), 'placeholder -> facility.get.description)
-            <button>編集</button>
+            <button class="button">編集</button>
+            <button class="button"><a href="/facility/list">戻る</a></button>
+            <button class="button"><a href="/facility/delete/@facility.get.id.get ">削除</a></button>
         <div>
-        <div><a href="/facility/list">一覧ページに戻る</a></div>
-        <div><a href="/facility/delete/@facility.get.id.get">削除</a></div>
     }
 } else {
     <div>存在しないidです</div>
