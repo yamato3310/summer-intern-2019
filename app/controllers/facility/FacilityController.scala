@@ -12,6 +12,7 @@ import play.api.mvc.{AbstractController, MessagesControllerComponents}
 import persistence.facility.dao.FacilityDAO
 import persistence.facility.model.Facility.formForFacilitySearch
 import persistence.facility.model.Facility.formForFacilityEdit
+import persistence.facility.model.Facility.formForFacilityAdd
 import persistence.geo.model.Location
 import persistence.geo.dao.LocationDAO
 import model.site.facility.SiteViewValueFacilityList
@@ -138,19 +139,30 @@ class FacilityController @javax.inject.Inject()(
   /**
    * 施設追加画面
    */
-  def add() = Action { implicit request =>
-    val header = SiteViewValueFacilityAdd(
-      layout = ViewValuePageLayout(id = request.uri),
-    )
-    Ok(views.html.site.facility.add.Main(header, formForFacilityEdit))
+  def add() = Action.async { implicit request =>
+    for {
+      locSeq <- daoLocation.getCitys()
+    } yield {
+      val header = SiteViewValueFacilityAdd(
+        layout = ViewValuePageLayout(id = request.uri),
+        location = locSeq
+      )
+      Ok(views.html.site.facility.add.Main(header, formForFacilityAdd))
+    }
   }
 
   /**
    * 施設追加
    */
+   def create = TODO
   // def create = Action.async { implicit request =>
-  //   formForFacilityEdit.bindFromRequest.fold
-  // }
+  //   formForFacilityEdit.bindFromRequest.fold(
+  //     errors => {
 
-  def create = TODO
+  //     },
+  //     form => {
+        
+  //     }
+  //   )
+  // }
 }

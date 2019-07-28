@@ -3,7 +3,7 @@
 @import persistence.facility.model._
 
 @** 施設追加 *@
-@(vv: SiteViewValueFacilityAdd, form: Form[FacilityEdit])(implicit messages: play.api.i18n.Messages)
+@(vv: SiteViewValueFacilityAdd, form: Form[FacilityAdd])(implicit messages: play.api.i18n.Messages)
 @views.html.common.layout.Default(vv.layout) {
     @views.html.common.layout.ContentLayout(
         id = "site-facility-edit",
@@ -13,5 +13,5 @@
 
 @** テンプレート: コンテンツ *@
 @tplContent = {
-    @views.html.site.facility.add._Add(form)
+    @views.html.site.facility.add._Add(vv.location, form)
 }

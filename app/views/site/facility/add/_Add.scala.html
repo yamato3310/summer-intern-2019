@@ -1,10 +1,18 @@
 @import persistence.facility.model._
+@import persistence.geo.model.Location
 
 
-@(form: Form[FacilityEdit])(implicit messages: play.api.i18n.Messages)
+@(location: Seq[Location], form: Form[FacilityAdd])(implicit messages: play.api.i18n.Messages)
 
 @helper.form( action = controllers.facility.routes.FacilityController.create) {
     <div>
+        @helper.select(
+            field   = form("locationId"),
+            options = location.map(v => (v.id, v.nameCity.get)),
+            '_label           -> "市",
+            '_default         -> "未選択",
+            '_showConstraints -> false
+        )
         @helper.inputText(form("name"))
         @helper.inputText(form("address"))
         @helper.inputText(form("description"))

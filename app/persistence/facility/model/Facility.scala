@@ -38,7 +38,7 @@ case class FacilityEdit(
 
 // 施設追加
 case class FacilityAdd(
-  locationIdOpt: Option[Location.Id]
+  locationIdOpt: Option[Location.Id],
   name: String,
   address: String,
   description: String,
@@ -73,7 +73,7 @@ object Facility {
       "name" -> text,
       "address" -> text,
       "description" -> text
-    )(FacilityCreate.apply)(FacilityCreate.unapply)
+    )(FacilityAdd.apply)(FacilityAdd.unapply)
   )
 }
 

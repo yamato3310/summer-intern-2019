@@ -61,6 +61,17 @@ class LocationDAO @javax.inject.Inject()(
     }
   }
 
+  /**
+   * 市の一覧を取得
+  */
+  def getCitys(): Future[Seq[Location]] = {
+    db.run {
+      slick
+        .filter(_.nameCity.nonEmpty)
+        .result
+    }
+  }
+
   // --[ テーブル定義 ] --------------------------------------------------------
   class LocationTable(tag: Tag) extends Table[Location](tag, "geo_location") {
 
