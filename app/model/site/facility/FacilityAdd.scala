@@ -15,4 +15,5 @@ import persistence.facility.model.Facility
 //~~~~~~~~~~~~~~~~~~~~~
 case class SiteViewValueFacilityAdd(
   layout:   ViewValuePageLayout,
+  location: Seq[Location],
 )
