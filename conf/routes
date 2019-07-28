@@ -15,6 +15,7 @@ GET  /facility/show/:id                controllers.facility.FacilityController.s
 POST /facility/edit/:id                controllers.facility.FacilityController.edit(id: Long)
 GET /facility/add                      controllers.facility.FacilityController.add
 POST /facility/create                  controllers.facility.FacilityController.create
+GET /facility/delete/:id               controllers.facility.FacilityController.delete(id: Long)
 
 # --[ 特集ページ ]--------------------------------------------------------------
 GET  /recruit/intership-for-summer-21  controllers.recruit.InternshipForSummer21Controller.view

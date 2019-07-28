@@ -49,6 +49,11 @@ class FacilityDAO @javax.inject.Inject()(
       slick.map(p => (p.locationId, p.name, p.address, p.description)) += ((locationId, name, address, description))
     }
 
+  def delete(id: Long): Unit = 
+    db.run {
+      slick.filter(_.id === id).delete
+    }
+
   /**
    * 施設を全件取得する
    */

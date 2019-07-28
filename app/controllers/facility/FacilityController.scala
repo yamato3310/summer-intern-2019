@@ -185,4 +185,22 @@ class FacilityController @javax.inject.Inject()(
       }
     )
   }
+
+  /**
+   * 施設追加
+   */
+  def delete(id: Long) = Action.async { implicit request =>
+    facilityDao.delete(id)
+    for {
+      locSeq      <- daoLocation.filterByIds(Location.Region.IS_PREF_ALL)
+      facilitySeq <- facilityDao.findAll
+    } yield {
+      val vv = SiteViewValueFacilityList(
+        layout     = ViewValuePageLayout(id = request.uri),
+        location   = locSeq,
+        facilities = facilitySeq
+      )
+      Ok(views.html.site.facility.list.Main(vv, formForFacilitySearch))
+    }
+  }
 }
