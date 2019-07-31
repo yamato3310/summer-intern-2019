@@ -1,0 +1,9 @@
+@import model.site.organization.SiteViewValueOrganizationList
+
+@(vv: SiteViewValueOrganizationList)(implicit messages: play.api.i18n.Messages)
+
+<ul>
+    @for (organizations <- vv.organizations) {
+        <li>organizations.name</li>
+    }
+<li>
