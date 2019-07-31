@@ -4,6 +4,7 @@ package persistence.organization.model
 import play.api.data._
 import play.api.data.Forms._
 import java.time.LocalDateTime
+import persistence.geo.model.Location
 
 case class Organization(
     id:          Option[Organization.Id],

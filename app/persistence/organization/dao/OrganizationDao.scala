@@ -22,7 +22,7 @@ class OrganizationDAO @javax.inject.Inject()(
           slick.result
         }
         
-    class OrganizationTable() extends Table[Organization](tag, "organization") {
+    class OrganizationTable(tag: Tag) extends Table[Organization](tag, "organization") {
         def id            = column[Organization.Id] ("id", O.PrimaryKey, O.AutoInc)
         def locationId    = column[Location.Id] ("location_id")
         def name          = column[String] ("name")
