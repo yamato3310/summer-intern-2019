@@ -1,0 +1,73 @@
+[2019-07-31 14:29:21,720] INFO org.github.dragos.vscode.Main$ - Starting server in c:\Users\n1280127.STCN2\Documents\nextbeat\summer-intern-2019
+[2019-07-31 14:29:21,720] INFO org.github.dragos.vscode.Main$ - Starting server in c:\Users\n1280127.STCN2\Documents\nextbeat\summer-intern-2019
+[2019-07-31 14:29:21,734] INFO org.github.dragos.vscode.Main$ - Classpath: c:\Users\n1280127.STCN2\.vscode\extensions\dragos.scala-lsp-0.2.3\coursier
+[2019-07-31 14:29:21,734] INFO org.github.dragos.vscode.Main$ - Classpath: c:\Users\n1280127.STCN2\.vscode\extensions\dragos.scala-lsp-0.2.3\coursier
+[2019-07-31 14:29:21,877] DEBUG langserver.core.MessageReader - Received headers:
+Content-Length: 1259
+[2019-07-31 14:29:21,877] DEBUG langserver.core.MessageReader - Received headers:
+Content-Length: 1259
+[2019-07-31 14:29:21,893] DEBUG langserver.core.Connection - Received {"jsonrpc":"2.0","id":0,"method":"initialize","params":{"processId":19192,"rootPath":"c:\\Users\\n1280127.STCN2\\Documents\\nextbeat\\summer-intern-2019","rootUri":"file:///c%3A/Users/n1280127.STCN2/Documents/nextbeat/summer-intern-2019","capabilities":{"workspace":{"applyEdit":true,"didChangeConfiguration":{"dynamicRegistration":false},"didChangeWatchedFiles":{"dynamicRegistration":false},"symbol":{"dynamicRegistration":true},"executeCommand":{"dynamicRegistration":true}},"textDocument":{"synchronization":{"dynamicRegistration":true,"willSave":true,"willSaveWaitUntil":true,"didSave":true},"completion":{"dynamicRegistration":true,"completionItem":{"snippetSupport":true}},"hover":{"dynamicRegistration":true},"signatureHelp":{"dynamicRegistration":true},"references":{"dynamicRegistration":true},"documentHighlight":{"dynamicRegistration":true},"documentSymbol":{"dynamicRegistration":true},"formatting":{"dynamicRegistration":true},"rangeFormatting":{"dynamicRegistration":true},"onTypeFormatting":{"dynamicRegistration":true},"definition":{"dynamicRegistration":true},"codeAction":{"dynamicRegistration":true},"codeLens":{"dynamicRegistration":true},"documentLink":{"dynamicRegistration":true},"rename":{"dynamicRegistration":true}}},"trace":"off"}}
+[2019-07-31 14:29:21,893] DEBUG langserver.core.Connection - Received {"jsonrpc":"2.0","id":0,"method":"initialize","params":{"processId":19192,"rootPath":"c:\\Users\\n1280127.STCN2\\Documents\\nextbeat\\summer-intern-2019","rootUri":"file:///c%3A/Users/n1280127.STCN2/Documents/nextbeat/summer-intern-2019","capabilities":{"workspace":{"applyEdit":true,"didChangeConfiguration":{"dynamicRegistration":false},"didChangeWatchedFiles":{"dynamicRegistration":false},"symbol":{"dynamicRegistration":true},"executeCommand":{"dynamicRegistration":true}},"textDocument":{"synchronization":{"dynamicRegistration":true,"willSave":true,"willSaveWaitUntil":true,"didSave":true},"completion":{"dynamicRegistration":true,"completionItem":{"snippetSupport":true}},"hover":{"dynamicRegistration":true},"signatureHelp":{"dynamicRegistration":true},"references":{"dynamicRegistration":true},"documentHighlight":{"dynamicRegistration":true},"documentSymbol":{"dynamicRegistration":true},"formatting":{"dynamicRegistration":true},"rangeFormatting":{"dynamicRegistration":true},"onTypeFormatting":{"dynamicRegistration":true},"definition":{"dynamicRegistration":true},"codeAction":{"dynamicRegistration":true},"codeLens":{"dynamicRegistration":true},"documentLink":{"dynamicRegistration":true},"rename":{"dynamicRegistration":true}}},"trace":"off"}}
+[2019-07-31 14:29:22,410] INFO org.github.dragos.vscode.EnsimeLanguageServer - Initialized with 19192, c:\Users\n1280127.STCN2\Documents\nextbeat\summer-intern-2019, ClientCapabilities()
+[2019-07-31 14:29:22,410] INFO org.github.dragos.vscode.EnsimeLanguageServer - Initialized with 19192, c:\Users\n1280127.STCN2\Documents\nextbeat\summer-intern-2019, ClientCapabilities()
+[2019-07-31 14:29:22,414] DEBUG org.github.dragos.vscode.EnsimeLanguageServer - ensime.config = "C:/Users/n1280127.STCN2/Documents/nextbeat/summer-intern-2019/.ensime" 
+[2019-07-31 14:29:22,414] DEBUG org.github.dragos.vscode.EnsimeLanguageServer - ensime.config = "C:/Users/n1280127.STCN2/Documents/nextbeat/summer-intern-2019/.ensime" 
+[2019-07-31 14:29:22,903] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+[2019-07-31 14:29:23,067] ERROR org.github.dragos.vscode.EnsimeLanguageServer - initializeEnsime Error: C:\Users\n1280127.STCN2\Documents\nextbeat\summer-intern-2019\.ensime
+[2019-07-31 14:29:23,067] ERROR org.github.dragos.vscode.EnsimeLanguageServer - initializeEnsime Error: C:\Users\n1280127.STCN2\Documents\nextbeat\summer-intern-2019\.ensime
+[2019-07-31 14:29:23,126] DEBUG langserver.core.MessageWriter - Content-Length: 146
+
+
+
+{"jsonrpc":"2.0","method":"window/showMessage","params":{"tpe":1,"message":"No .ensime file in directory. Run `sbt ensimeConfig` to create one."}}
+[2019-07-31 14:29:23,126] DEBUG langserver.core.MessageWriter - Content-Length: 146
+
+
+
+{"jsonrpc":"2.0","method":"window/showMessage","params":{"tpe":1,"message":"No .ensime file in directory. Run `sbt ensimeConfig` to create one."}}
+[2019-07-31 14:29:23,126] DEBUG langserver.core.MessageWriter - payload: {"jsonrpc":"2.0","method":"window/showMessage","params":{"tpe":1,"message":"No .ensime file in directory. Run `sbt ensimeConfig` to create one."}}
+[2019-07-31 14:29:23,126] DEBUG langserver.core.MessageWriter - payload: {"jsonrpc":"2.0","method":"window/showMessage","params":{"tpe":1,"message":"No .ensime file in directory. Run `sbt ensimeConfig` to create one."}}
+[2019-07-31 14:29:23,202] DEBUG langserver.core.MessageWriter - Content-Length: 441
+
+
+
+{"jsonrpc":"2.0","result":{"capabilities":{"textDocumentSync":1,"hoverProvider":true,"completionProvider":{"resolveProvider":false,"triggerCharacters":["."]},"definitionProvider":true,"referencesProvider":false,"documentHighlightProvider":false,"documentSymbolProvider":true,"workspaceSymbolProvider":false,"codeActionProvider":false,"documentFormattingProvider":false,"documentRangeFormattingProvider":false,"renameProvider":false}},"id":0}
+[2019-07-31 14:29:23,202] DEBUG langserver.core.MessageWriter - Content-Length: 441
+
+
+
+{"jsonrpc":"2.0","result":{"capabilities":{"textDocumentSync":1,"hoverProvider":true,"completionProvider":{"resolveProvider":false,"triggerCharacters":["."]},"definitionProvider":true,"referencesProvider":false,"documentHighlightProvider":false,"documentSymbolProvider":true,"workspaceSymbolProvider":false,"codeActionProvider":false,"documentFormattingProvider":false,"documentRangeFormattingProvider":false,"renameProvider":false}},"id":0}
+[2019-07-31 14:29:23,202] DEBUG langserver.core.MessageWriter - payload: {"jsonrpc":"2.0","result":{"capabilities":{"textDocumentSync":1,"hoverProvider":true,"completionProvider":{"resolveProvider":false,"triggerCharacters":["."]},"definitionProvider":true,"referencesProvider":false,"documentHighlightProvider":false,"documentSymbolProvider":true,"workspaceSymbolProvider":false,"codeActionProvider":false,"documentFormattingProvider":false,"documentRangeFormattingProvider":false,"renameProvider":false}},"id":0}
+[2019-07-31 14:29:23,202] DEBUG langserver.core.MessageWriter - payload: {"jsonrpc":"2.0","result":{"capabilities":{"textDocumentSync":1,"hoverProvider":true,"completionProvider":{"resolveProvider":false,"triggerCharacters":["."]},"definitionProvider":true,"referencesProvider":false,"documentHighlightProvider":false,"documentSymbolProvider":true,"workspaceSymbolProvider":false,"codeActionProvider":false,"documentFormattingProvider":false,"documentRangeFormattingProvider":false,"renameProvider":false}},"id":0}
+[2019-07-31 14:29:23,203] DEBUG langserver.core.MessageReader - Received headers:
+Content-Length: 52
+[2019-07-31 14:29:23,203] DEBUG langserver.core.MessageReader - Received headers:
+Content-Length: 52
+[2019-07-31 14:29:23,204] DEBUG langserver.core.Connection - Received {"jsonrpc":"2.0","method":"initialized","params":{}}
+[2019-07-31 14:29:23,204] DEBUG langserver.core.Connection - Received {"jsonrpc":"2.0","method":"initialized","params":{}}
+[2019-07-31 14:29:23,219] ERROR org.github.dragos.vscode.EnsimeLanguageServer - Unknown notification Initialized()
+[2019-07-31 14:29:23,219] ERROR org.github.dragos.vscode.EnsimeLanguageServer - Unknown notification Initialized()
+[2019-07-31 14:29:23,219] DEBUG langserver.core.MessageReader - Received headers:
+Content-Length: 1896
+[2019-07-31 14:29:23,219] DEBUG langserver.core.MessageReader - Received headers:
+Content-Length: 1896
+[2019-07-31 14:29:23,220] DEBUG langserver.core.Connection - Received {"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":"file:///c%3A/Users/n1280127.STCN2/Documents/nextbeat/summer-intern-2019/app/controllers/app/NewUserCommit.scala","languageId":"scala","version":1,"text":"/*\n * This file is part of Nextbeat services.\n *\n * For the full copyright and license information,\n * please view the LICENSE file that was distributed with this source code.\n */\n\npackage controllers.app\n\nimport javax.inject.Inject\nimport play.api.i18n.I18nSupport\nimport play.api.mvc.{AbstractController, MessagesControllerComponents}\nimport persistence.geo.dao.LocationDAO\nimport persistence.udb.dao.UserDAO\nimport persistence.geo.model.Location\nimport persistence.udb.model.User.formForNewUser\nimport model.site.app.SiteViewValueNewUser\nimport model.component.util.ViewValuePageLayout\n\n// “o˜^: V‹Kƒ†[ƒU\n//~~~~~~~~~~~~~~~~~~~~~\nclass NewUserCommitController @Inject()(\n  val daoLocation: LocationDAO,\n  val userDAO: UserDAO,\n  cc: MessagesControllerComponents\n) extends AbstractController(cc) with I18nSupport {\n  implicit lazy val executionContext = defaultExecutionContext\n\n  /**\n   * V‹Kƒ†[ƒU‚Ì“o˜^\n   */\n  def application = Action.async { implicit request =>\n    formForNewUser.bindFromRequest.fold(\n      errors => {\n        for {\n          locSeq <- daoLocation.filterByIds(Location.Region.IS_PREF_ALL)\n        } yield {\n          val vv = SiteViewValueNewUser(\n            layout   = ViewValuePageLayout(id = request.uri),\n            location = locSeq\n          )\n          BadRequest(views.html.site.app.new_user.Main(vv, errors))\n        }\n      },\n      user   => {\n        for {\n          _ <- userDAO.add(user)\n        } yield {\n          // TODO: ƒZƒbƒVƒ‡ƒ“’Ç‰Áˆ—\n          Redirect(\"/recruit/intership-for-summer-21\")\n        }\n      }\n    )\n  }\n\n}\n"}}}
+[2019-07-31 14:29:23,220] DEBUG langserver.core.Connection - Received {"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":"file:///c%3A/Users/n1280127.STCN2/Documents/nextbeat/summer-intern-2019/app/controllers/app/NewUserCommit.scala","languageId":"scala","version":1,"text":"/*\n * This file is part of Nextbeat services.\n *\n * For the full copyright and license information,\n * please view the LICENSE file that was distributed with this source code.\n */\n\npackage controllers.app\n\nimport javax.inject.Inject\nimport play.api.i18n.I18nSupport\nimport play.api.mvc.{AbstractController, MessagesControllerComponents}\nimport persistence.geo.dao.LocationDAO\nimport persistence.udb.dao.UserDAO\nimport persistence.geo.model.Location\nimport persistence.udb.model.User.formForNewUser\nimport model.site.app.SiteViewValueNewUser\nimport model.component.util.ViewValuePageLayout\n\n// “o˜^: V‹Kƒ†[ƒU\n//~~~~~~~~~~~~~~~~~~~~~\nclass NewUserCommitController @Inject()(\n  val daoLocation: LocationDAO,\n  val userDAO: UserDAO,\n  cc: MessagesControllerComponents\n) extends AbstractController(cc) with I18nSupport {\n  implicit lazy val executionContext = defaultExecutionContext\n\n  /**\n   * V‹Kƒ†[ƒU‚Ì“o˜^\n   */\n  def application = Action.async { implicit request =>\n    formForNewUser.bindFromRequest.fold(\n      errors => {\n        for {\n          locSeq <- daoLocation.filterByIds(Location.Region.IS_PREF_ALL)\n        } yield {\n          val vv = SiteViewValueNewUser(\n            layout   = ViewValuePageLayout(id = request.uri),\n            location = locSeq\n          )\n          BadRequest(views.html.site.app.new_user.Main(vv, errors))\n        }\n      },\n      user   => {\n        for {\n          _ <- userDAO.add(user)\n        } yield {\n          // TODO: ƒZƒbƒVƒ‡ƒ“’Ç‰Áˆ—\n          Redirect(\"/recruit/intership-for-summer-21\")\n        }\n      }\n    )\n  }\n\n}\n"}}}
+[2019-07-31 14:33:30,521] DEBUG langserver.core.MessageReader - Received headers:
+Content-Length: 58
+[2019-07-31 14:33:30,521] DEBUG langserver.core.MessageReader - Received headers:
+Content-Length: 58
+[2019-07-31 14:33:30,667] DEBUG langserver.core.Connection - Received {"jsonrpc":"2.0","id":1,"method":"shutdown","params":null}
+[2019-07-31 14:33:30,667] DEBUG langserver.core.Connection - Received {"jsonrpc":"2.0","id":1,"method":"shutdown","params":null}
+[2019-07-31 14:33:30,859] DEBUG langserver.core.MessageWriter - Content-Length: 198
+
+
+
+{"jsonrpc":"2.0","error":{"code":-32602,"message":"Invalid params","data":{"meaning":"Invalid method parameter(s).","error":{"obj":[{"msg":["command parameters must be given"],"args":[]}]}}},"id":1}
+[2019-07-31 14:33:30,859] DEBUG langserver.core.MessageWriter - Content-Length: 198
+
+
+
+{"jsonrpc":"2.0","error":{"code":-32602,"message":"Invalid params","data":{"meaning":"Invalid method parameter(s).","error":{"obj":[{"msg":["command parameters must be given"],"args":[]}]}}},"id":1}
+[2019-07-31 14:33:30,860] DEBUG langserver.core.MessageWriter - payload: {"jsonrpc":"2.0","error":{"code":-32602,"message":"Invalid params","data":{"meaning":"Invalid method parameter(s).","error":{"obj":[{"msg":["command parameters must be given"],"args":[]}]}}},"id":1}
+[2019-07-31 14:33:30,860] DEBUG langserver.core.MessageWriter - payload: {"jsonrpc":"2.0","error":{"code":-32602,"message":"Invalid params","data":{"meaning":"Invalid method parameter(s).","error":{"obj":[{"msg":["command parameters must be given"],"args":[]}]}}},"id":1}

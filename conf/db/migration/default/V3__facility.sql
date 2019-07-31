@@ -1,5 +1,5 @@
 -- 施設定義 (sample)
---------------
+# --- !Ups
 CREATE TABLE "facility" (
   "id"          INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
   "location_id" VARCHAR(8)   NOT NULL,
