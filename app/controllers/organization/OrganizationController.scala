@@ -5,6 +5,8 @@ import play.api.mvc.{AbstractController, MessagesControllerComponents}
 
 import persistence.organization.dao.OrganizationDAO
 import model.site.organization.SiteViewValueOrganizationList
+import model.site.organization.SiteViewValueOrganizationAdd
+import persistence.organization.model.Organization.formForOrganizationAdd
 
 import persistence.facility.dao.FacilityDAO
 import persistence.facility.model.Facility.formForFacilitySearch
@@ -34,6 +36,46 @@ class OrganizationController @javax.inject.Inject()(
             )
             Ok(views.html.site.organization.list.Main(vv))
         }
+    }
+
+    def add() = Action.async { implicit request =>
+        for {
+            locSeq <- daoLocation.getCitys()
+        } yield {
+            val vv = SiteViewValueOrganizationAdd(
+                location      = locSeq,
+                layout        = ViewValuePageLayout(id = request.uri),
+            )
+            Ok(views.html.site.organization.add.Main(vv, formForOrganizationAdd))
+        }
+    }
+
+    def create() = Action.async { implicit request => 
+        formForOrganizationAdd.bindFromRequest.fold(
+            error => {
+                for {
+                    organizationSeq <- organizationDao.findAll
+                } yield {
+                    val vv = SiteViewValueOrganizationList(
+                        layout        = ViewValuePageLayout(id = request.uri),
+                        organizations = organizationSeq
+                    )
+                    Ok(views.html.site.organization.list.Main(vv))
+                }
+            },
+            form => {
+                organizationDao.create(form.locationId, form.name, form.address)
+                for {
+                    organizationSeq <- organizationDao.findAll
+                } yield {
+                    val vv = SiteViewValueOrganizationList(
+                        layout        = ViewValuePageLayout(id = request.uri),
+                        organizations = organizationSeq
+                    )
+                    Ok(views.html.site.organization.list.Main(vv))
+                }
+            }
+        )
     }
     
 }

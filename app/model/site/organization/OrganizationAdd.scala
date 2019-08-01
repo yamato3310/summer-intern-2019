@@ -6,7 +6,7 @@ import persistence.geo.model.Location
 
 // 表示: 施設一覧
 //~~~~~~~~~~~~~~~~~~~~~
-case class SiteViewValueOrganizationList(
+case class SiteViewValueOrganizationAdd(
   layout:   ViewValuePageLayout,
-  organizations: Seq[Organization]
+  location: Seq[Location],
 )

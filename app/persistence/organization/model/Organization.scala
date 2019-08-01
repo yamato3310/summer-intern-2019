@@ -15,6 +15,20 @@ case class Organization(
     createdAt:   LocalDateTime = LocalDateTime.now   // データ作成日
 )
 
+case class OrganizationAdd(
+    name: String,
+    locationId: Location.Id,
+    address: String
+)
+
 object Organization {
     type Id = Long
+
+    def formForOrganizationAdd = Form(
+        mapping(
+            "name" -> text,
+            "locationId" -> text,
+            "address" -> text
+        )(OrganizationAdd.apply)(OrganizationAdd.unapply)
+    )
 }
