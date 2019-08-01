@@ -9,5 +9,5 @@ CREATE TABLE "organization" (
 ) ENGINE=InnoDB;
 
 --------------
-INSERT INTO "organizaion" ("location_id", "name", "address") VALUES ('14100', '山田太郎', '横浜市旭区');
-INSERT INTO "organizaion" ("location_id", "name", "address") VALUES ('14100', '鈴木太郎', '横浜市瀬谷区');
+INSERT INTO "organization" ("location_id", "name", "address") VALUES ('14100', '山田太郎', '横浜市旭区');
+INSERT INTO "organization" ("location_id", "name", "address") VALUES ('14100', '鈴木太郎', '横浜市瀬谷区');
