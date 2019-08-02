@@ -21,6 +21,12 @@ case class OrganizationAdd(
     address: String
 )
 
+case class OrganizationEdit(
+    name: String,
+    locationId: Location.Id,
+    address: String
+)
+
 object Organization {
     type Id = Long
 
@@ -30,5 +36,13 @@ object Organization {
             "locationId" -> text,
             "address" -> text
         )(OrganizationAdd.apply)(OrganizationAdd.unapply)
+    )
+
+    def formForOrganizationEdit = Form(
+        mapping(
+            "name" -> text,
+            "locationId" -> text,
+            "address" -> text
+        )(OrganizationEdit.apply)(OrganizationEdit.unapply)
     )
 }

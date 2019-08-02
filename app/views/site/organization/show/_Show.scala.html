@@ -1,0 +1,10 @@
+@import model.site.organization.SiteViewValueOrganizationShow
+
+@(vv: SiteViewValueOrganizationShow)(implicit messages: play.api.i18n.Messages)
+
+<ul>
+    <li>@vv.organization.get.name</li>
+</ul>
+
+<button class="button"><a href="/organization/edit/@vv.organization.get.id.get">編集</a></button>
+<button class="button"><a href="/organization/delete/@vv.organization.get.id.get">削除</a></button>

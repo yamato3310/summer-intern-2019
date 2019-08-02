@@ -1,0 +1,15 @@
+@import model.site.organization.SiteViewValueOrganizationShow
+
+@** 組織一覧 *@
+@(vv: SiteViewValueOrganizationShow)(implicit messages: play.api.i18n.Messages)
+@views.html.common.layout.Default(vv.layout) {
+  @views.html.common.layout.ContentLayout(
+    id      = "site-organization-list",
+    content = tplContent
+  )
+}
+
+@** テンプレート: コンテンツ *@
+@tplContent = {
+  @views.html.site.organization.show._Show(vv)
+}

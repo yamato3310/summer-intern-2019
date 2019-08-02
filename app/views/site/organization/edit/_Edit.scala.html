@@ -1,0 +1,22 @@
+@import model.site.organization.SiteViewValueOrganizationEdit
+@import persistence.organization.model.OrganizationEdit
+@import play.api.data.Form
+
+@(vv: SiteViewValueOrganizationEdit, form: Form[OrganizationEdit])(implicit messages: play.api.i18n.Messages)
+
+@helper.form( action = controllers.organization.routes.OrganizationController.update(vv.organization.get.id.get) ) {
+    <div>
+        @helper.select(
+            field   = form("locationId"),
+            options = vv.location.map(v => (v.id, v.nameCity.get)),
+            '_label           -> "市",
+            '_default         -> "未選択",
+            '_showConstraints -> false
+        )
+        @helper.inputText(form("name"))
+        @helper.inputText(form("address"))
+        <button class="button">編集</button>
+        <button class="button"><a href="/organization/show/@vv.organization.get.id.get">戻る</a></button>
+    </div>
+}
+

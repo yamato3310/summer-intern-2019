@@ -18,9 +18,13 @@ POST /facility/create                  controllers.facility.FacilityController.c
 GET /facility/delete/:id               controllers.facility.FacilityController.delete(id: Long)
 
 #--[ 組織 ]---------------------------------------------------------------------
-GET  /organization/list    controllers.organization.OrganizationController.list
-GET  /organization/add     controllers.organization.OrganizationController.add
-POST /organization/creae   controllers.organization.OrganizationController.create
+GET  /organization/list           controllers.organization.OrganizationController.list
+GET  /organization/add            controllers.organization.OrganizationController.add
+GET  /organization/show/:id       controllers.organization.OrganizationController.show(id: Long)
+GET  /organization/edit/:id       controllers.organization.OrganizationController.edit(id: Long)
+POST /organization/update/:id     controllers.organization.OrganizationController.update(id: Long)
+POST /organization/create         controllers.organization.OrganizationController.create
+GET  /organization/delete         controllers.organization.OrganizationController.delete(id: Long)
 
 # --[ 特集ページ ]--------------------------------------------------------------
 GET  /recruit/intership-for-summer-21  controllers.recruit.InternshipForSummer21Controller.view
