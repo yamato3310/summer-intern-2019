@@ -14,6 +14,7 @@
             '_showConstraints -> false
         )
 
+        @** なぜnameをlocationIdにしないと取れないのか *@
         @helper.inputText(form("name"), 'placeholder -> vv.organization.get.locationId)
         @helper.inputText(form("address"), 'placeholder -> vv.organization.get.address)
         <button class="button">編集</button>

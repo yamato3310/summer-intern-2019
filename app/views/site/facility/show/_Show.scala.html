@@ -1,0 +1,42 @@
+@import persistence.facility.model._
+
+
+@(facility: Option[Facility])(implicit messages: play.api.i18n.Messages)
+
+<div class="center">
+    <button class="button"><a href="/facility/edit/@facility.get.id">編集</a></button>
+    <button class="button"><a href="/facility/delete/@facility.get.id">削除</a></button>
+    <button class="button"><a href="/facility/list">一覧に戻る</a></button>
+</div>
+
+<div class="nav-global-simple center">
+    <div class="content__section content">
+        <article class="facility-list-item">
+            <div class="item-panel__wrapper">
+                <header class="facility-item__header">
+                    <div class="name">
+                        @facility.get.name
+                    </div>
+                </header>
+                <section class="facility-item__content">
+                    <div>
+                        <div class="item-panel__content">
+                            <div class="address">
+                                <label class="inline">住所:</label>
+                                <p class="inline">
+                                    @facility.get.address
+                                </p>
+                            </div>
+                            <div class="description">
+                                <label class="inline">備考:</label>
+                                <p class="inline">
+                                    @facility.get.description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </div>
+</div>

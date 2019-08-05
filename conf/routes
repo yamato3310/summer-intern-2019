@@ -9,13 +9,14 @@ POST  /app/new-user                     controllers.app.NewUserCommitController.
 
 
 # --[ 施設ページ ]----------------------------------------------------------------
-GET  /facility/list                    controllers.facility.FacilityController.list
-GET  /facility/search                  controllers.facility.FacilityController.search
-GET  /facility/show/:id                controllers.facility.FacilityController.show(id: Long)
-POST /facility/edit/:id                controllers.facility.FacilityController.edit(id: Long)
-GET /facility/add                      controllers.facility.FacilityController.add
-POST /facility/create                  controllers.facility.FacilityController.create
-GET /facility/delete/:id               controllers.facility.FacilityController.delete(id: Long)
+GET  /facility/list               controllers.facility.FacilityController.list
+GET  /facility/search             controllers.facility.FacilityController.search
+GET  /facility/show/:id           controllers.facility.FacilityController.show(id: Long)
+GET  /facility/edit/:id           controllers.facility.FacilityController.edit(id: Long)
+POST  /facility/update/:id         controllers.facility.FacilityController.update(id: Long)
+GET  /facility/add                controllers.facility.FacilityController.add
+POST /facility/create             controllers.facility.FacilityController.create
+GET  /facility/delete/:id         controllers.facility.FacilityController.delete(id: Long)
 
 #--[ 組織 ]---------------------------------------------------------------------
 GET  /organization/list           controllers.organization.OrganizationController.list
@@ -24,7 +25,7 @@ GET  /organization/show/:id       controllers.organization.OrganizationControlle
 GET  /organization/edit/:id       controllers.organization.OrganizationController.edit(id: Long)
 POST /organization/update/:id     controllers.organization.OrganizationController.update(id: Long)
 POST /organization/create         controllers.organization.OrganizationController.create
-GET  /organization/delete/:id         controllers.organization.OrganizationController.delete(id: Long)
+GET  /organization/delete/:id     controllers.organization.OrganizationController.delete(id: Long)
 
 # --[ 特集ページ ]--------------------------------------------------------------
 GET  /recruit/intership-for-summer-21  controllers.recruit.InternshipForSummer21Controller.view
