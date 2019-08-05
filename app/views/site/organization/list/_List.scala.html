@@ -6,8 +6,15 @@
 
 <button class="button"><a href="/organization/add">組織を追加</a></button>
 
-<ul>
-    @for(organizations <- vv.organizations) {
-        <li>@organizations.name</li>
+<div class="organization-list">
+    @for(organization <- vv.organizations) {
+        <div class="organization-wrapper">
+            <a href="show/@organization.id">
+                <div class="organization-container">
+                    <div class="organization-element">名前: @organization.name</div>
+                    <div class="organization-element">住所: @organization.address</div>
+                </div>
+            </a>
+        </div>
     }
-</ul>
+</div>
