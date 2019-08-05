@@ -10,9 +10,10 @@
 <div class="organization-list">
     @for(organization <- vv.organizations) {
         <div class="organization-wrapper">
-            <a href="show/@organization.id">
+            <a href="/organization/show/@organization.id">
                 <div class="organization-container">
-                    <div class="organization-element">名前: @organization.name</div>
+                    @** なぜnameをlocationIdにしないと取れないのか *@
+                    <div class="organization-element">名前: @organization.locationId</div>
                     <div class="organization-element">住所: @organization.address</div>
                 </div>
             </a>
