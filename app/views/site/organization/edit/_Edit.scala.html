@@ -13,8 +13,9 @@
             '_default         -> "未選択",
             '_showConstraints -> false
         )
-        @helper.inputText(form("name"))
-        @helper.inputText(form("address"))
+
+        @helper.inputText(form("name"), 'placeholder -> vv.organization.get.name)
+        @helper.inputText(form("address"), 'placeholder -> vv.organization.get.address)
         <button class="button">編集</button>
         <button class="button"><a href="/organization/show/@vv.organization.get.id.get">戻る</a></button>
     </div>

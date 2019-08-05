@@ -3,8 +3,9 @@
 
 
 @(vv: SiteViewValueOrganizationList)(implicit messages: play.api.i18n.Messages)
-
-<button class="button"><a href="/organization/add">組織を追加</a></button>
+<div class="center">
+    <button class="button"><a href="/organization/add">組織を追加</a></button>
+</div>
 
 <div class="organization-list">
     @for(organization <- vv.organizations) {

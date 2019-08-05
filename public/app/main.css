@@ -798,16 +798,16 @@ h1, h2, h3, h4, h5, h6 {
   .organization-wrapper {
     width: 50vw;
     margin: 0 auto;
-    padding: 1vh;
-    /* background: gray; */
-  }
+    padding: 1vh;}
   .organization-container {
     height: 10vh;
     border: solid 1px;
-    flex-direction: column;
-    }
+    flex-direction: column;}
     .organization-element {
       height: 5vh;
       line-height: 5vh;
-      padding: 0 4vh;
-    }
+      padding: 0 4vh;}
+.center {
+  display: flex;
+  justify-content: center;
+  margin: 2vh;}

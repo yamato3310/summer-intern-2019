@@ -2,9 +2,16 @@
 
 @(vv: SiteViewValueOrganizationShow)(implicit messages: play.api.i18n.Messages)
 
-<ul>
-    <li>@vv.organization.get.name</li>
-</ul>
+<div class="center">
+    <button class="button"><a href="/organization/edit/@vv.organization.get.id.get">編集</a></button>
+    <button class="button"><a href="/organization/delete/@vv.organization.get.id.get">削除</a></button>
+    <button class="button"><a href="/organization/list">一覧に戻る</a></button>
+</div>
 
-<button class="button"><a href="/organization/edit/@vv.organization.get.id.get">編集</a></button>
-<button class="button"><a href="/organization/delete/@vv.organization.get.id.get">削除</a></button>
+<div class="organization-wrapper">
+    <div class="organization-container">
+        <div class="organization-element">名前: @vv.organization.get.name</div>
+        <div class="organization-element">住所: @vv.organization.get.address</div>
+    </div>
+</div>
+
